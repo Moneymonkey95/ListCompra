@@ -24,7 +24,7 @@ namespace ListaCompra.Services
             });
         }
 
-        public async Task CreateItemsAsync( string Nombre, Boolean Prioridad, string Nota)
+        public async Task CreateItemsAsync( string Nombre, Boolean Prioridad, string Nota, string Categoria)
         {
             string ID = await getMaxID();
 
@@ -36,6 +36,7 @@ namespace ListaCompra.Services
                 Prioridad = Prioridad,
                 Nota = Nota,
                 PartitionKey = ID,
+                Categoria = Categoria,
                 RowKey = ID
             };
 
@@ -46,10 +47,12 @@ namespace ListaCompra.Services
             await this.tablaClientes.ExecuteAsync(insert);
         }
 
+
+
         private async Task<string> getMaxID()
         {
             int maxID = 0;
-            List<ItemCompra> lista = await GetItemsAsync();
+            List<ItemCompra> lista = await GetAllItemsAsync();
             foreach (ItemCompra item in lista)
             {
                 if (int.Parse(item.ID) > maxID) { maxID = int.Parse(item.ID); }
@@ -57,20 +60,28 @@ namespace ListaCompra.Services
             return (++maxID + "");
         }
 
-        public async Task<List<ItemCompra>> GetItemsAsync()
+        public async Task<List<ItemCompra>> GetItemsAsync(string categoria)
         {
             TableQuery<ItemCompra> query = new TableQuery<ItemCompra>();
             TableQuerySegment<ItemCompra> segment = await this.tablaClientes.ExecuteQuerySegmentedAsync(query, null);
             List<ItemCompra> items = segment.Results;
-            return items.Where(i => i.Comprado == false).OrderByDescending(i => i.Prioridad).ToList();
+            return items.Where(i => i.Comprado == false && i.Categoria==categoria).OrderByDescending(i => i.Prioridad).ToList();
         }
 
-        public async Task<List<ItemCompra>> GetItemsRemovedAsync()
+        public async Task<List<ItemCompra>> GetAllItemsAsync()
         {
             TableQuery<ItemCompra> query = new TableQuery<ItemCompra>();
             TableQuerySegment<ItemCompra> segment = await this.tablaClientes.ExecuteQuerySegmentedAsync(query, null);
             List<ItemCompra> items = segment.Results;
-            return items.Where(i => i.Comprado == true).OrderByDescending(i => i.Prioridad).ToList();
+            return items.OrderBy(i => i.Timestamp).ToList();
+        }
+
+        public async Task<List<ItemCompra>> GetItemsRemovedAsync(string categoria)
+        {
+            TableQuery<ItemCompra> query = new TableQuery<ItemCompra>();
+            TableQuerySegment<ItemCompra> segment = await this.tablaClientes.ExecuteQuerySegmentedAsync(query, null);
+            List<ItemCompra> items = segment.Results;
+            return items.Where(i => i.Comprado == true && i.Categoria == categoria).OrderByDescending(i => i.Prioridad).ToList();
         }
 
         public async Task<ItemCompra> FindItemsAsync(string rowkey , string partitionkey)
@@ -81,12 +92,19 @@ namespace ListaCompra.Services
             return cliente;
         }
 
-        public async Task DeleteItemsAsync(ItemCompra item)
+        public async Task ComprarItemsAsync(ItemCompra item)
         {
             ItemCompra cliente = await this.FindItemsAsync(item.ID, item.ID);
             cliente.Comprado = true;
             TableOperation update = TableOperation.Replace(cliente);
             await this.tablaClientes.ExecuteAsync(update);
+        }
+
+        public async Task BorrarItemsAsync(ItemCompra item)
+        {
+            ItemCompra cliente = await this.FindItemsAsync(item.ID, item.ID);
+            TableOperation delete = TableOperation.Delete(cliente);
+            await this.tablaClientes.ExecuteAsync(delete);
         }
 
     }

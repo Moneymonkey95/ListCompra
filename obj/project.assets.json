@@ -7741,19 +7741,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\mgonz\\.nuget\\packages\\": {}
+    "C:\\Users\\mario\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mgonz\\source\\repos\\ListaDeLaCompra\\ListaCompra\\ListaCompra.csproj",
+      "projectUniqueName": "D:\\Repository\\Github\\ListaCompra\\ListCompra\\ListaCompra.csproj",
       "projectName": "ListaCompra",
-      "projectPath": "C:\\Users\\mgonz\\source\\repos\\ListaDeLaCompra\\ListaCompra\\ListaCompra.csproj",
-      "packagesPath": "C:\\Users\\mgonz\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mgonz\\source\\repos\\ListaDeLaCompra\\ListaCompra\\obj\\",
+      "projectPath": "D:\\Repository\\Github\\ListaCompra\\ListCompra\\ListaCompra.csproj",
+      "packagesPath": "C:\\Users\\mario\\.nuget\\packages\\",
+      "outputPath": "D:\\Repository\\Github\\ListaCompra\\ListCompra\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\mgonz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\mario\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7802,6 +7802,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[3.1.13, 3.1.13]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -7810,7 +7816,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.218\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
       }
     }
   }

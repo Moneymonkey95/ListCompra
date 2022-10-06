@@ -1,0 +1,55 @@
+﻿@model IEnumerable<ListaCompra.Models.ItemCompra>
+
+@{
+    ViewData["Title"] = "Historial - Decoración";
+}
+
+<h1>Historial</h1>
+<h3>Decoración</h3>
+
+
+
+<table class="table" align="center">
+    <thead>
+        <tr>
+            <th>
+                Fecha Compra
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Prioridad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nota)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Timestamp.DateTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Prioridad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nota)
+            </td>
+            <td>
+                <a class="btn btn-primary" style="background-color:lightpink" asp-action="Borrar" asp-route-id="@item.ID" asp-route-categoria="@item.Categoria">Borrar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+<p>
+    <a class="btn btn-primary" style="background-color:lightgoldenrodyellow" asp-action="IndexDeco">Volver a Decoración</a>
+</p> 

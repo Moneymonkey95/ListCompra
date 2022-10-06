@@ -16,35 +16,73 @@ namespace ListaCompra.Controllers
             this.service = service;
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> IndexSuper()
         {
-            List<ItemCompra> items = await this.service.GetItemsAsync();
+            List<ItemCompra> items = await this.service.GetItemsAsync("Super");
             return View(items);
         }
 
-        public async Task<IActionResult> Historial()
+        public async Task<IActionResult> HistorialSuper()
         {
-            List<ItemCompra> items = await this.service.GetItemsRemovedAsync();
+            List<ItemCompra> items = await this.service.GetItemsRemovedAsync("Super");
             return View(items);
         }
 
-        public IActionResult Create()
+        public IActionResult CreateSuper()
         {
             return View();
         }
 
+
+       
+
         [HttpPost]
-        public async Task<IActionResult> Create(ItemCompra item)
+        public async Task<IActionResult> CreateSuper(ItemCompra item)
         {
-            await this.service.CreateItemsAsync(item.Nombre, item.Prioridad, item.Nota);
-            return RedirectToAction("Index");
+            await this.service.CreateItemsAsync(item.Nombre, item.Prioridad, item.Nota, "Super");
+            return RedirectToAction("IndexSuper");
         }
 
 
-        public async Task<IActionResult> Delete(ItemCompra item)
+
+
+        // DECORACIÓN
+        public IActionResult CreateDeco()
         {
-            await this.service.DeleteItemsAsync(item);
-            return RedirectToAction("Index");
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> CreateDeco(ItemCompra item)
+        {
+            await this.service.CreateItemsAsync(item.Nombre, item.Prioridad, item.Nota, "Deco");
+            return RedirectToAction("IndexDeco");
+        }
+        public async Task<IActionResult> IndexDeco()
+        {
+            List<ItemCompra> items = await this.service.GetItemsAsync("Deco");
+            return View(items);
+        }
+        public async Task<IActionResult> HistorialDeco()
+        {
+            List<ItemCompra> items = await this.service.GetItemsRemovedAsync("Deco");
+            return View(items);
+        }
+        
+
+
+
+
+
+        public async Task<IActionResult> Comprar(ItemCompra item)
+        {
+            await this.service.ComprarItemsAsync(item);
+            return RedirectToAction("Index"+item.Categoria);
+        }
+
+        public async Task<IActionResult> Borrar(ItemCompra item)
+        {
+            await this.service.BorrarItemsAsync(item);
+            return RedirectToAction("Historial" + item.Categoria);
         }
 
     }

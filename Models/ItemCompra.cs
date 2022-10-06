@@ -10,6 +10,7 @@ namespace ListaCompra.Models {
         private string _ID { get; set; }
         public string ID { get { return this._ID; } set { this.PartitionKey = value; this.RowKey = value; this._ID = value; } }
         public String Nombre { get; set; }
+        public String Categoria { get; set; }
         public Boolean Comprado { get; set; }
         public string Nota { get; set; }
         public Boolean Prioridad { get; set; }

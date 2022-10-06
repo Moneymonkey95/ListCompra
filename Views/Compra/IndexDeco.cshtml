@@ -1,21 +1,29 @@
 ﻿@model IEnumerable<ListaCompra.Models.ItemCompra>
 
 @{
-    ViewData["Title"] = "Historial - Supermercado";
+    ViewData["Title"] = "Decoración";
 }
 
-<h1>Supermercado</h1>
-<h3>Historial</h3>
+<h1>Decoración</h1>
 
 <p>
-    <a asp-action="Index">Volver a Supermercado</a>
+    <table class="table">
+        <tr>
+            <td>
+                <a class="btn btn-primary" style="background-color:aqua" asp-action="CreateDeco">Añadir Artículo</a>
+            </td>
+            <td>
+                <a class="btn btn-primary" style="background-color:antiquewhite" asp-action="HistorialDeco">Historial</a>
+            </td>
+        </tr>
+    </table>
+    
 </p>
+
+
 <table class="table" align="center">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Timestamp)
-            </th>
             <th>
                 @Html.DisplayNameFor(model => model.Nombre)
             </th>
@@ -32,9 +40,6 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Timestamp)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.Nombre)
             </td>
             <td>
@@ -42,6 +47,9 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Nota)
+            </td>
+            <td>
+                <a class="btn btn-primary" style="background-color:aquamarine" asp-action="Comprar" asp-route-id="@item.ID" asp-route-categoria="@item.Categoria">Comprar</a>
             </td>
         </tr>
 }

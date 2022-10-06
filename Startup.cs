@@ -49,7 +49,7 @@ namespace ListaCompra
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Compra}/{action=Index}/{id?}");
+                    pattern: "{controller=Compra}/{action=IndexSuper}/{id?}");
             });
         }
     }
