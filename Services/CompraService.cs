@@ -68,6 +68,8 @@ namespace ListaCompra.Services
             return items.Where(i => i.Comprado == false && i.Categoria==categoria).OrderByDescending(i => i.Prioridad).ToList();
         }
 
+        
+
         public async Task<List<ItemCompra>> GetAllItemsAsync()
         {
             TableQuery<ItemCompra> query = new TableQuery<ItemCompra>();
@@ -105,6 +107,16 @@ namespace ListaCompra.Services
             ItemCompra cliente = await this.FindItemsAsync(item.ID, item.ID);
             TableOperation delete = TableOperation.Delete(cliente);
             await this.tablaClientes.ExecuteAsync(delete);
+        }
+
+        internal async Task BorrarTodoAsync(string categoria)
+        {
+            List<ItemCompra> items = await this.GetItemsRemovedAsync(categoria: categoria);
+            foreach (ItemCompra item in items)
+            {
+                TableOperation delete = TableOperation.Delete(item);
+                await this.tablaClientes.ExecuteAsync(delete);
+            }
         }
 
     }

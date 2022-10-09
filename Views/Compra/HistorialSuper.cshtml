@@ -7,8 +7,6 @@
 <h1>Historial</h1>
 <h3>Supermercado</h3>
 
-
-
 <table class="table" align="center">
     <thead>
         <tr>
@@ -28,28 +26,33 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Timestamp.DateTime)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nombre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Prioridad)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nota)
-            </td>
-            <td>
-                <a class="btn btn-primary" style="background-color:lightpink" asp-action="Borrar" asp-route-id="@item.ID" asp-route-categoria="@item.Categoria">Borrar</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Timestamp.DateTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Prioridad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nota)
+                </td>
+                <td>
+                    <a class="btn btn-primary" style="background-color:lightpink" asp-action="Borrar" asp-route-id="@item.ID" asp-route-categoria="@item.Categoria">Borrar</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
 
-<p>
-    <a class="btn btn-primary" style="background-color:lightgoldenrodyellow" asp-action="IndexSuper">Volver a Supermercado</a>
-</p> 
+@{
+    if (Model.Count() > 0){
+        <p><a class="btn btn-primary" style="background-color:lightpink" asp-action="BorrarTodo" asp-route-categoria="Super">Borrar Todo</a></p>
+    }
+}
+
+<p><a class="btn btn-primary" style="background-color:lightgoldenrodyellow" asp-action="IndexSuper">Volver a Supermercado</a></p> 

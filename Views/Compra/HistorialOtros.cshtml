@@ -5,7 +5,7 @@
 }
 
 <h1>Historial</h1>
-<h3>Decoración</h3>
+<h3>Otros</h3>
 
 <table class="table" align="center">
     <thead>
@@ -52,10 +52,10 @@
 @{
     if (Model.Count() > 0)
     {
-        <p><a class="btn btn-primary" style="background-color:lightpink" asp-action="BorrarTodo" asp-route-categoria="Deco">Borrar Todo</a></p>
+        <p><a class="btn btn-primary" style="background-color:lightpink" asp-action="BorrarTodo" asp-route-categoria="Otros">Borrar Todo</a></p>
     }
 }
 
 <p>
-    <a class="btn btn-primary" style="background-color:lightgoldenrodyellow" asp-action="IndexDeco">Volver a Decoración</a>
+    <a class="btn btn-primary" style="background-color:lightgoldenrodyellow" asp-action="IndexOtros">Volver a Otros</a>
 </p> 

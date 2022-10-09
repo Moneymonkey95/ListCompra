@@ -255,3 +255,6 @@ D:\Repository\Github\ListaCompra\ListCompra\obj\Release\netcoreapp3.1\Razor\View
 D:\Repository\Github\ListaCompra\ListCompra\obj\Release\netcoreapp3.1\Razor\Views\Compra\HistorialSuper.cshtml.g.cs
 D:\Repository\Github\ListaCompra\ListCompra\obj\Release\netcoreapp3.1\Razor\Views\Compra\IndexDeco.cshtml.g.cs
 D:\Repository\Github\ListaCompra\ListCompra\obj\Release\netcoreapp3.1\Razor\Views\Compra\IndexSuper.cshtml.g.cs
+D:\Repository\Github\ListaCompra\ListCompra\obj\Release\netcoreapp3.1\Razor\Views\Compra\CreateOtros.cshtml.g.cs
+D:\Repository\Github\ListaCompra\ListCompra\obj\Release\netcoreapp3.1\Razor\Views\Compra\HistorialOtros.cshtml.g.cs
+D:\Repository\Github\ListaCompra\ListCompra\obj\Release\netcoreapp3.1\Razor\Views\Compra\IndexOtros.cshtml.g.cs

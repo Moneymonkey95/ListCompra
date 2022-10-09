@@ -256,3 +256,6 @@ D:\Repository\Github\ListaCompra\ListCompra\obj\Debug\netcoreapp3.1\Razor\Views\
 D:\Repository\Github\ListaCompra\ListCompra\obj\Debug\netcoreapp3.1\Razor\Views\Compra\CreateDeco.cshtml.g.cs
 D:\Repository\Github\ListaCompra\ListCompra\obj\Debug\netcoreapp3.1\Razor\Views\Compra\HistorialDeco.cshtml.g.cs
 D:\Repository\Github\ListaCompra\ListCompra\obj\Debug\netcoreapp3.1\Razor\Views\Compra\IndexDeco.cshtml.g.cs
+D:\Repository\Github\ListaCompra\ListCompra\obj\Debug\netcoreapp3.1\Razor\Views\Compra\CreateOtros.cshtml.g.cs
+D:\Repository\Github\ListaCompra\ListCompra\obj\Debug\netcoreapp3.1\Razor\Views\Compra\HistorialOtros.cshtml.g.cs
+D:\Repository\Github\ListaCompra\ListCompra\obj\Debug\netcoreapp3.1\Razor\Views\Compra\IndexOtros.cshtml.g.cs

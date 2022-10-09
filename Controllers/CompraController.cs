@@ -67,7 +67,29 @@ namespace ListaCompra.Controllers
             List<ItemCompra> items = await this.service.GetItemsRemovedAsync("Deco");
             return View(items);
         }
-        
+
+        // Otros
+        public IActionResult CreateOtros()
+        {
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> CreateOtros(ItemCompra item)
+        {
+            await this.service.CreateItemsAsync(item.Nombre, item.Prioridad, item.Nota, "Otros");
+            return RedirectToAction("IndexOtros");
+        }
+        public async Task<IActionResult> IndexOtros()
+        {
+            List<ItemCompra> items = await this.service.GetItemsAsync("Otros");
+            return View(items);
+        }
+        public async Task<IActionResult> HistorialOtros()
+        {
+            List<ItemCompra> items = await this.service.GetItemsRemovedAsync("Otros");
+            return View(items);
+        }
+
 
 
 
@@ -83,6 +105,12 @@ namespace ListaCompra.Controllers
         {
             await this.service.BorrarItemsAsync(item);
             return RedirectToAction("Historial" + item.Categoria);
+        }
+
+        public async Task<IActionResult> BorrarTodo(string categoria)
+        {
+            await this.service.BorrarTodoAsync(categoria);
+            return RedirectToAction("Historial" + categoria);
         }
 
     }
