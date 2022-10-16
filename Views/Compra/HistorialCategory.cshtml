@@ -1,11 +1,17 @@
 ﻿@model IEnumerable<ListaCompra.Models.ItemCompra>
 
+
 @{
-    ViewData["Title"] = "Historial - Decoración";
+    var category = "";
+    if (Context.Request.QueryString.HasValue)
+    {
+        category = System.Web.HttpUtility.ParseQueryString(Context.Request.QueryString.Value).Get("categoria");
+        ViewData["Title"] = "Historial -" + category;
+    }
 }
 
 <h1>Historial</h1>
-<h3>Decoración</h3>
+<h3>@category</h3>
 
 <table class="table" align="center">
     <thead>
@@ -52,10 +58,8 @@
 @{
     if (Model.Count() > 0)
     {
-        <p><a class="btn btn-primary" style="background-color:lightpink" asp-action="BorrarTodo" asp-route-categoria="Deco">Borrar Todo</a></p>
+        <p><a class="btn btn-primary" style="background-color:lightpink" asp-action="BorrarTodo" asp-route-categoria="@category">Borrar Todo</a></p>
     }
 }
 
-<p>
-    <a class="btn btn-primary" style="background-color:lightgoldenrodyellow" asp-action="IndexDeco">Volver a Decoración</a>
-</p> 
+<p><a class="btn btn-primary" style="background-color:lightgoldenrodyellow" asp-action="IndexCategory" asp-route-categoria="@category">Volver a @category</a></p> 

@@ -1,0 +1,70 @@
+﻿@model IEnumerable<ListaCompra.Models.ItemCompra>
+
+@{
+    var category = "";
+    if (Context.Request.QueryString.HasValue)
+    {
+        category = System.Web.HttpUtility.ParseQueryString(Context.Request.QueryString.Value).Get("categoria");
+        ViewData["Title"] = category;
+    }
+}
+
+<p>
+    <table class="table" style="border-bottom: none">
+        <tr >
+            <td style="border-bottom: none">
+                <h1>
+                     @category
+                </h1>
+            </td>
+            <td style="border-bottom: none">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Acciones
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="Compra/CreateItemForm/?categoria=@category">Añadir artículo</a>
+                        <a class="dropdown-item" href="Compra/HistorialCategory/?categoria=@category">Ver historial</a>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+</p>
+
+
+<table class="table" align="center">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Prioridad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nota)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Prioridad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nota)
+                </td>
+                <td>
+                    <a class="btn btn-primary" style="background-color:aquamarine" asp-action="Comprar" asp-route-id="@item.ID" asp-route-categoria="@item.Categoria" >Comprar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

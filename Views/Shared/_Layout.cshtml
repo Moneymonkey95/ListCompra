@@ -11,7 +11,7 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Compra" asp-action="IndexSuper">Lista Compras</a>
+                <a href="/" class="navbar-left"><img src="/Resources/Images/LogoM&S.png" style="width: 100px"></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -19,13 +19,13 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Compra" asp-action="IndexSuper">Supermercado</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Compra" asp-action="IndexCategory" asp-route-categoria="Super">Supermercado</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Compra" asp-action="IndexDeco">Decoración</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Compra" asp-action="IndexCategory" asp-route-categoria="Deco">Decoración</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Compra" asp-action="IndexOtros">Otros</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Compra" asp-action="IndexCategory" asp-route-categoria="Otros">Otros</a>
                         </li>
                         
                     </ul>

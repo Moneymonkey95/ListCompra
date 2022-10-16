@@ -95,12 +95,12 @@ namespace ListaCompra.Services
             return cliente;
         }
 
-        public async Task ComprarItemsAsync(ItemCompra item)
+        public async Task ComprarItemsAsync(string id)
         {
-            ItemCompra cliente = await this.FindItemsAsync(item.ID, item.ID);
-            cliente.Comprado = true;
-            TableOperation update = TableOperation.Replace(cliente);
-            await this.tablaClientes.ExecuteAsync(update);
+                ItemCompra cliente = await this.FindItemsAsync(id, id);
+                cliente.Comprado = true;
+                TableOperation update = TableOperation.Replace(cliente);
+                await this.tablaClientes.ExecuteAsync(update);
         }
 
         public async Task BorrarItemsAsync(ItemCompra item)

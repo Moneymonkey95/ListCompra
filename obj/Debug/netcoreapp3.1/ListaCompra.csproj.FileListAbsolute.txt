@@ -160,7 +160,6 @@ D:\Repository\Github\ListaCompra\ListCompra\bin\Debug\netcoreapp3.1\Microsoft.Vi
 D:\Repository\Github\ListaCompra\ListCompra\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
 D:\Repository\Github\ListaCompra\ListCompra\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 D:\Repository\Github\ListaCompra\ListCompra\bin\Debug\netcoreapp3.1\NuGet.Frameworks.dll
-D:\Repository\Github\ListaCompra\ListCompra\bin\Debug\netcoreapp3.1\PexelsDotNetSDK.dll
 D:\Repository\Github\ListaCompra\ListCompra\bin\Debug\netcoreapp3.1\System.Composition.AttributedModel.dll
 D:\Repository\Github\ListaCompra\ListCompra\bin\Debug\netcoreapp3.1\System.Composition.Convention.dll
 D:\Repository\Github\ListaCompra\ListCompra\bin\Debug\netcoreapp3.1\System.Composition.Hosting.dll
@@ -235,15 +234,9 @@ D:\Repository\Github\ListaCompra\ListCompra\obj\Debug\netcoreapp3.1\scopedcss\bu
 D:\Repository\Github\ListaCompra\ListCompra\obj\Debug\netcoreapp3.1\ListaCompra.TagHelpers.input.cache
 D:\Repository\Github\ListaCompra\ListCompra\obj\Debug\netcoreapp3.1\ListaCompra.TagHelpers.output.cache
 D:\Repository\Github\ListaCompra\ListCompra\obj\Debug\netcoreapp3.1\ListaCompra.RazorCoreGenerate.cache
-D:\Repository\Github\ListaCompra\ListCompra\obj\Debug\netcoreapp3.1\Razor\Views\Compra\CreateDeco.cshtml.g.cs
-D:\Repository\Github\ListaCompra\ListCompra\obj\Debug\netcoreapp3.1\Razor\Views\Compra\CreateOtros.cshtml.g.cs
-D:\Repository\Github\ListaCompra\ListCompra\obj\Debug\netcoreapp3.1\Razor\Views\Compra\CreateSuper.cshtml.g.cs
-D:\Repository\Github\ListaCompra\ListCompra\obj\Debug\netcoreapp3.1\Razor\Views\Compra\HistorialDeco.cshtml.g.cs
-D:\Repository\Github\ListaCompra\ListCompra\obj\Debug\netcoreapp3.1\Razor\Views\Compra\HistorialOtros.cshtml.g.cs
-D:\Repository\Github\ListaCompra\ListCompra\obj\Debug\netcoreapp3.1\Razor\Views\Compra\HistorialSuper.cshtml.g.cs
-D:\Repository\Github\ListaCompra\ListCompra\obj\Debug\netcoreapp3.1\Razor\Views\Compra\IndexDeco.cshtml.g.cs
-D:\Repository\Github\ListaCompra\ListCompra\obj\Debug\netcoreapp3.1\Razor\Views\Compra\IndexOtros.cshtml.g.cs
-D:\Repository\Github\ListaCompra\ListCompra\obj\Debug\netcoreapp3.1\Razor\Views\Compra\IndexSuper.cshtml.g.cs
+D:\Repository\Github\ListaCompra\ListCompra\obj\Debug\netcoreapp3.1\Razor\Views\Compra\CreateItemForm.cshtml.g.cs
+D:\Repository\Github\ListaCompra\ListCompra\obj\Debug\netcoreapp3.1\Razor\Views\Compra\HistorialCategory.cshtml.g.cs
+D:\Repository\Github\ListaCompra\ListCompra\obj\Debug\netcoreapp3.1\Razor\Views\Compra\IndexCategory.cshtml.g.cs
 D:\Repository\Github\ListaCompra\ListCompra\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 D:\Repository\Github\ListaCompra\ListCompra\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
 D:\Repository\Github\ListaCompra\ListCompra\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs

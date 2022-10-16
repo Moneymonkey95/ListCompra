@@ -2,15 +2,23 @@
 
 @{
     ViewData["Title"] = "Añadir Artículo";
+
+    var category = "";
+    if (Context.Request.QueryString.HasValue)
+    {
+        category = System.Web.HttpUtility.ParseQueryString(Context.Request.QueryString.Value).Get("categoria");
+        ViewData["Title"] = "Historial -" + category;
+    }
+
 }
 
 <h1>Añadir Artículo</h1>
+<h4>@category</h4>
 
-<h4>Supermercado</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="CreateSuper">
+        <form asp-action="CreateItem">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Nombre" class="control-label"></label>
@@ -28,7 +36,7 @@
                 </label>
             </div>
             <div class="form-group">
-                <input type="submit" style="background-color:aquamarine" value="Create" class="btn btn-primary" asp-action="createSuper" />
+                <input type="submit" style="background-color:aquamarine" value="Create" class="btn btn-primary" asp-action="createItem" asp-route-categoria="@category" />
             </div>
         </form>
     </div>

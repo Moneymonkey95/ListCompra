@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "/e6AbWUP61NQUhAgTEWCfZ/JYESR7cosdkWqrVzD/oVTzqXk+xsJtDA86NtkfXEFY19wfYN+FY+gbElsetN+OA==",
+  "dgSpecHash": "rSRoM2iGJ9Xy6Gyj1XGxMuhfuN0+ba95B1qfpdt5ZcWpeCsjNbri0CDGh+PXpuCr/r0Ttw4t1HQiY812utQg/Q==",
   "success": true,
   "projectFilePath": "D:\\Repository\\Github\\ListaCompra\\ListCompra\\ListaCompra.csproj",
   "expectedPackageFiles": [
@@ -36,9 +36,8 @@
     "C:\\Users\\mario\\.nuget\\packages\\microsoft.visualstudio.web.codegenerators.mvc\\3.1.5\\microsoft.visualstudio.web.codegenerators.mvc.3.1.5.nupkg.sha512",
     "C:\\Users\\mario\\.nuget\\packages\\microsoft.win32.primitives\\4.3.0\\microsoft.win32.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\mario\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
-    "C:\\Users\\mario\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\mario\\.nuget\\packages\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512",
     "C:\\Users\\mario\\.nuget\\packages\\nuget.frameworks\\4.7.0\\nuget.frameworks.4.7.0.nupkg.sha512",
-    "C:\\Users\\mario\\.nuget\\packages\\pexelsdotnetsdk\\1.0.11\\pexelsdotnetsdk.1.0.11.nupkg.sha512",
     "C:\\Users\\mario\\.nuget\\packages\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",
     "C:\\Users\\mario\\.nuget\\packages\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",
     "C:\\Users\\mario\\.nuget\\packages\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",

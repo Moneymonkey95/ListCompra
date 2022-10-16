@@ -16,101 +16,48 @@ namespace ListaCompra.Controllers
             this.service = service;
         }
 
-        public async Task<IActionResult> IndexSuper()
+
+
+        public async Task<IActionResult> Comprar(string id, string categoria)
         {
-            List<ItemCompra> items = await this.service.GetItemsAsync("Super");
-            return View(items);
-        }
-
-        public async Task<IActionResult> HistorialSuper()
-        {
-            List<ItemCompra> items = await this.service.GetItemsRemovedAsync("Super");
-            return View(items);
-        }
-
-        public IActionResult CreateSuper()
-        {
-            return View();
-        }
-
-
-       
-
-        [HttpPost]
-        public async Task<IActionResult> CreateSuper(ItemCompra item)
-        {
-            await this.service.CreateItemsAsync(item.Nombre, item.Prioridad, item.Nota, "Super");
-            return RedirectToAction("IndexSuper");
-        }
-
-
-
-
-        // DECORACIÓN
-        public IActionResult CreateDeco()
-        {
-            return View();
-        }
-        [HttpPost]
-        public async Task<IActionResult> CreateDeco(ItemCompra item)
-        {
-            await this.service.CreateItemsAsync(item.Nombre, item.Prioridad, item.Nota, "Deco");
-            return RedirectToAction("IndexDeco");
-        }
-        public async Task<IActionResult> IndexDeco()
-        {
-            List<ItemCompra> items = await this.service.GetItemsAsync("Deco");
-            return View(items);
-        }
-        public async Task<IActionResult> HistorialDeco()
-        {
-            List<ItemCompra> items = await this.service.GetItemsRemovedAsync("Deco");
-            return View(items);
-        }
-
-        // Otros
-        public IActionResult CreateOtros()
-        {
-            return View();
-        }
-        [HttpPost]
-        public async Task<IActionResult> CreateOtros(ItemCompra item)
-        {
-            await this.service.CreateItemsAsync(item.Nombre, item.Prioridad, item.Nota, "Otros");
-            return RedirectToAction("IndexOtros");
-        }
-        public async Task<IActionResult> IndexOtros()
-        {
-            List<ItemCompra> items = await this.service.GetItemsAsync("Otros");
-            return View(items);
-        }
-        public async Task<IActionResult> HistorialOtros()
-        {
-            List<ItemCompra> items = await this.service.GetItemsRemovedAsync("Otros");
-            return View(items);
-        }
-
-
-
-
-
-
-        public async Task<IActionResult> Comprar(ItemCompra item)
-        {
-            await this.service.ComprarItemsAsync(item);
-            return RedirectToAction("Index"+item.Categoria);
+            await this.service.ComprarItemsAsync(id);
+            return Redirect("/Compra/IndexCategory/?categoria=" + categoria);
         }
 
         public async Task<IActionResult> Borrar(ItemCompra item)
         {
             await this.service.BorrarItemsAsync(item);
-            return RedirectToAction("Historial" + item.Categoria);
+            return Redirect("/Compra/HistorialCategory/?categoria=" + item.Categoria);
         }
 
         public async Task<IActionResult> BorrarTodo(string categoria)
         {
             await this.service.BorrarTodoAsync(categoria);
-            return RedirectToAction("Historial" + categoria);
+            return Redirect("/Compra/HistorialCategory/?categoria=" + categoria);
+        }
+
+
+
+
+
+        public async Task<IActionResult> IndexCategory (string categoria)
+        {
+            List<ItemCompra> items = await this.service.GetItemsAsync(categoria);
+            return View(items);
+        }
+        public async Task<IActionResult> HistorialCategory(string categoria)
+        {
+            List<ItemCompra> items = await this.service.GetItemsRemovedAsync(categoria);
+            return View(items);
+        }
+        public IActionResult CreateItemForm(string categoria)
+        {
+            return View();
+        }
+        public async Task<IActionResult> CreateItem(ItemCompra item, string categoria)
+        {
+            await this.service.CreateItemsAsync(item.Nombre, item.Prioridad, item.Nota, categoria);
+            return Redirect("/Compra/IndexCategory/?categoria=" + categoria);
         }
 
     }
