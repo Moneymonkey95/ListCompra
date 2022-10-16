@@ -258,3 +258,4 @@ D:\Repository\Github\ListaCompra\ListCompra\obj\Release\netcoreapp3.1\Razor\View
 D:\Repository\Github\ListaCompra\ListCompra\obj\Release\netcoreapp3.1\Razor\Views\Compra\CreateOtros.cshtml.g.cs
 D:\Repository\Github\ListaCompra\ListCompra\obj\Release\netcoreapp3.1\Razor\Views\Compra\HistorialOtros.cshtml.g.cs
 D:\Repository\Github\ListaCompra\ListCompra\obj\Release\netcoreapp3.1\Razor\Views\Compra\IndexOtros.cshtml.g.cs
+D:\Repository\Github\ListaCompra\ListCompra\bin\Release\netcoreapp3.1\PexelsDotNetSDK.dll

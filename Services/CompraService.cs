@@ -18,6 +18,7 @@ namespace ListaCompra.Services
             CloudStorageAccount account = CloudStorageAccount.Parse(azureKeys);
             CloudTableClient client = account.CreateCloudTableClient();
             this.tablaClientes = client.GetTableReference("ListaCompra");
+
             Task.Run(async () =>
             {
                 await this.tablaClientes.CreateIfNotExistsAsync();
@@ -27,7 +28,7 @@ namespace ListaCompra.Services
         public async Task CreateItemsAsync( string Nombre, Boolean Prioridad, string Nota, string Categoria)
         {
             string ID = await getMaxID();
-
+            
             ItemCompra item = new ItemCompra
             {
                 ID = ID,

@@ -51,6 +51,10 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[3.1.5, )"
+            },
+            "PexelsDotNetSDK": {
+              "target": "Package",
+              "version": "[1.0.11, )"
             }
           },
           "imports": [

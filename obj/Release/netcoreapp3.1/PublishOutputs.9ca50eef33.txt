@@ -65,6 +65,7 @@ D:\Repository\Github\ListaCompra\ListCompra\obj\Release\netcoreapp3.1\PubTmp\Out
 D:\Repository\Github\ListaCompra\ListCompra\obj\Release\netcoreapp3.1\PubTmp\Out\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
 D:\Repository\Github\ListaCompra\ListCompra\obj\Release\netcoreapp3.1\PubTmp\Out\Newtonsoft.Json.dll
 D:\Repository\Github\ListaCompra\ListCompra\obj\Release\netcoreapp3.1\PubTmp\Out\NuGet.Frameworks.dll
+D:\Repository\Github\ListaCompra\ListCompra\obj\Release\netcoreapp3.1\PubTmp\Out\PexelsDotNetSDK.dll
 D:\Repository\Github\ListaCompra\ListCompra\obj\Release\netcoreapp3.1\PubTmp\Out\System.Composition.AttributedModel.dll
 D:\Repository\Github\ListaCompra\ListCompra\obj\Release\netcoreapp3.1\PubTmp\Out\System.Composition.Convention.dll
 D:\Repository\Github\ListaCompra\ListCompra\obj\Release\netcoreapp3.1\PubTmp\Out\System.Composition.Hosting.dll
